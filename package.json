@@ -1,0 +1,26 @@
+{
+  "name": "write",
+  "version": "0.0.1",
+  "author": "Alexandre Salomé <alexandre.salome@gmail.com>",
+  "license": "LicenseRef-LICENS E",
+  "repository": "https://github.com/alexandresalome/write.git",
+  "scripts": {
+    "start": "webpack && concurrently --kill-others \"npm run live-server\" \"npm run watch\"",
+    "live-server": "live-server --open=. --watch=dist",
+    "watch": "webpack --watch"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.2",
+    "jquery": "^2.2.4",
+    "prosemirror": "ProseMirror/prosemirror#master",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "tether": "^1.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^2.1.0",
+    "live-server": "^1.0.0",
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.8.2"
+  }
+}
