@@ -1,7 +1,11 @@
 module.exports = {
-    entry: "./src/index.tsx",
+    entry: [
+        "./src/index.tsx"
+    ],
     output: {
-        filename: "./dist/bundle.js",
+        filename: "./bundle.js",
+        publicPath: "dist/",
+        path: './dist'
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -15,7 +19,11 @@ module.exports = {
     module: {
         loaders: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-            { test: /\.tsx?$/, loader: "ts-loader" }
+            { test: /\.tsx?$/, loader: "ts-loader" },
+            { test: /\.less$/, loader: "style-loader!css-loader!less-loader"},
+            { test: /\.css$/, loader: "style-loader!css-loader"},
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' } // inline base64 URLs for <=8k images, direct URLs for the rest
+
         ],
 
         preLoaders: [
